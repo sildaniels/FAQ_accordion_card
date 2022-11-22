@@ -1,37 +1,118 @@
 :root {
-  --text-blue: hsl(238, 29%, 16%);
-  --text-dkblue: hsl(240, 6%, 50%);
-  --text-xdkblue: hsl(237, 12%, 33%);
-  --text-red: hsl(14, 88%, 65%);
-  --gradient-violet: hsl(273, 75%, 66%);
-  --gradient-blue: hsl(240, 73%, 65%);
-  --divider-blue: hsl(240, 5%, 91%);
+	--text-blue: hsl(238, 29%, 16%);
+	--text-dkblue: hsl(240, 6%, 50%);
+	--text-xdkblue: hsl(237, 12%, 33%);
+	--text-red: hsl(14, 88%, 65%);
+	--gradient-violet: hsl(273, 75%, 66%);
+	--gradient-blue: hsl(240, 73%, 65%);
+	--divider-blue: hsl(240, 5%, 91%);
 }
 
 html {
-  box-sizing: border-box;
-  font-size: 100%;
+	box-sizing: border-box;
+	font-size: 100%;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  font-family: 'Kumbh Sans', sans-serif;
-  background-image: linear-gradient(var(--gradient-blue), var(--gradient-violet));
+	min-height: 100vh;
+	margin: 0;
+	padding: 10rem 1rem;
+	font-family: 'Kumbh Sans', sans-serif;
+	background-image: linear-gradient(var(--gradient-blue), var(--gradient-violet));
+}
+
+.card {
+	background: #fff;
+	border-radius: 2rem;
+	max-width: 56rem;
+	background-image: url(/images/bg-pattern-mobile.svg);
+	background-repeat: no-repeat;
+	background-size: 15rem;
+	background-position: center 0%;
+}
+
+.card_box {
+	display: none;
+}
+
+.card_image {
+	position: relative;
+}
+
+.card_image img {
+	position: absolute;
+	top: -6.8rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: block;
+	width: 100%;
+	height: auto;
+	max-width: 15rem;
+}
+
+.card_text {
+	padding-top: 7rem;
+}
+
+@media (min-width: 56em) {
+	body {
+		padding: 3rem;
+	}
+
+	.card {
+		position: relative;
+		display: flex;
+		margin: 0 auto;
+		padding-right: 2rem;
+		background-image: url(/images/bg-pattern-desktop.svg);
+		background-size: 45%;
+		background-position: -12% center;
+	}
+
+	.card_box {
+		display: block;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 57%;
+		transform: translateX(-50%) translateY(-50%);
+	}
+
+	.card_image,
+	.card_text {
+		flex: 1;
+	}
+
+	.card_image {
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+
+	.card_image img {
+		position: relative;
+		top: auto;
+		left: auto;
+		transform: translateX(-4rem);
+		max-width: 25rem;
+	}
+
+	.card_text {
+		padding-top: 0;
+	}
 }
 
 .attribution {
-  font-size: 11px;
-  text-align: center;
+	font-size: 11px;
+	text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+	color: hsl(228, 45%, 44%);
 }
